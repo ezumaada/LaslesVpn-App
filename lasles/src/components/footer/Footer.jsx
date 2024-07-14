@@ -3,16 +3,18 @@ import logo from '../../assets/images/Logo.png';
 import fb from '../../assets/images/Facebook.png';
 import xx from '../../assets/images/Twitter.png';
 import ig from '../../assets/images/Instagram.png';
+import {Link} from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <div className='bg-[#F8F8F8] py-3 flex flex-row px-2'>
+    <div className='bg-[#F8F8F8] py-3 justify-around flex flex-row px-2'>
       <div className='w-1/2'>
         <div>
           <img src={logo} alt="LAsles-logo" />
         </div>
         <div className='my-4'>
-          <p> <strong> LaslesVPN</strong> is a private virtual network that has unique features and has high security.</p>
+          <p className='text-base '> <strong> LaslesVPN</strong> is a private virtual network that</p>
+          <p> has unique features and has high security.</p>
         </div>
         <div>
           <ul className='flex flex-row gap-2'>
@@ -28,7 +30,7 @@ const Footer = () => {
           <ul  className='flex flex-col mx-4 gap-4'>
           <li><strong>Product</strong></li>
           <li>Download</li>
-          <li>Pricing</li>
+          <Link to="/pricing"><li>Pricing</li></Link> 
           <li>Locations</li>
           <li>Server</li>
           <li>Countries</li>
