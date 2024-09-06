@@ -3,7 +3,7 @@ import abt from '../../assets/images/guyimage.png'
 
 const About = () => {
   return (
-    <div className='flex flex-row my-4 mx-[5vw]'>
+    <div className='flex flex-row my-4 mx-[5vw] '>
         <div>
             <h1 className='font-bold text-5xl my-3'>Want anything to be <br /> easy with <strong>LaslesVPN.</strong></h1>
             <p className='font-normal my-3'>Provide a network for all your needs with ease and fun using <span className='font-medium'>LaslesVPN</span>  <br /> discover interesting features from us.</p>

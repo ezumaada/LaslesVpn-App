@@ -7,7 +7,7 @@ import {Link} from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <div className='bg-[#F8F8F8] py-3 justify-around flex flex-row px-2'>
+    <div className='bg-[#F8F8F8] pt-20 justify-around flex flex-row px-2'>
       <div className='w-1/2'>
         <div>
           <img src={logo} alt="LAsles-logo" />

@@ -1,5 +1,4 @@
-import React from 'react';
-import './index.css';
+import React, { useRef } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Footer from './components/footer/Footer';
 import Navbar from './components/navbar/Navbar';
@@ -12,26 +11,64 @@ import SignIn from './pages/signin/SignIn';
 import SignUp from './pages/signup/SignUp';
 import Subscribe from './components/subscribe/Subscribe';
 import Subscription from './components/subscription/Subscription';
-import Homepage from './pages/homepage/Homepage';
+import World from './components/world/World';
+import Statistics from './components/statistics/Statistics';
 
 const App = () => {
+  const sectionsRef = [
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+  ];
+
+  const scrollToRef = (index) => {
+    window.scrollTo({
+      top: sectionsRef[index].current.offsetTop,
+      behavior: 'smooth',
+    });
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <div>
       <BrowserRouter>
-        
-          <Routes>
-            <Route path="/" element={<Homepage />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/features" element={<Features />} />
-            <Route path="/pricing" element={<Pricing />} />
-            <Route path="/testimonials" element={<Testimonials />} />
-            <Route path="/help" element={<Help />} />
-            <Route path="/signin" element={<SignIn />} />
-            <Route path="/signup" element={<SignUp />} />
-            <Route path="/subscribe" element={<Subscription />} />
-          </Routes>
-              
-        
+        <Routes>
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/subscribe" element={<Subscribe />} />
+          <Route
+            path="/"
+            element={
+              <>
+                <Navbar scrollToRef={scrollToRef} />
+                <div ref={sectionsRef[0]}><About /></div>
+                <div ref={sectionsRef[6]}><Statistics /></div>
+                <div ref={sectionsRef[1]}><Features /></div>
+                <div ref={sectionsRef[2]}><Pricing /></div>
+                <div ref={sectionsRef[5]}><World /></div>
+                <div ref={sectionsRef[3]}><Testimonials /></div>
+                <div ref={sectionsRef[4]}><Help /></div>
+                <div className='relative'>
+                  <Subscription className='absolute bottom-full' />
+                  <Footer />
+                </div>
+                <button onClick={scrollToTop} className="p-2 fixed bottom-5 right-5 bg-blue-500 text-white rounded">
+                  Scroll to Top
+                </button>
+              </>
+            }
+          />
+        </Routes>
       </BrowserRouter>
     </div>
   );

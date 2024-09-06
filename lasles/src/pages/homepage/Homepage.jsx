@@ -6,6 +6,8 @@ import Statistics from '../../components/statistics/Statistics'
 import Pricing from '../../components/pricing/Pricing'
 import Testimonials from '../../components/testimonials/Testimonials'
 import Footer from '../../components/footer/Footer'
+import Subscription from '../../components/subscription/Subscription'
+import World from '../../components/world/World'
 
 const Homepage = () => {
   return (
@@ -15,7 +17,9 @@ const Homepage = () => {
         <Statistics/>
         <Features/>
         <Pricing/>
+        <World/>
         <Testimonials/>
+        <Subscription/>
         <Footer/>
         
     </div>

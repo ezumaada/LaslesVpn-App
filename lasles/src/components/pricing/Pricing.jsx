@@ -43,7 +43,7 @@ const Pricing = () => {
           </div>
           <div>
             <h3 className='text-center my-3'>Price: <strong>$9 /</strong> mo </h3>
-            <button className='border-[#F53838] border-2 rounded-xl border-solid text-[#F53838] w-[170px]'>Select </button>
+            <button className='border-[#F53838]  border-2 rounded-xl border-solid text-[#F53838] w-[170px]'>Select </button>
 
           </div>
         </div>
