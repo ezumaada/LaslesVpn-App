@@ -47,10 +47,10 @@ function Testimonials() {
     <div className='testimonial'>
       <div className='container'>
         <div className='testimonial-header'>
-          <h2 className='secondary-header'>
-            Trusted by Thousands of <br /> Happy Customer
+          <h2 className='text-3xl font-bold'>
+            Trusted by Thousands of <br /> Happy Customers
           </h2>
-          <p className='subheading'>
+          <p className='font-semibold text-xl py-4'>
             These are the stories of our customers who have joined us with great{' '}
             <br /> pleasure when using this crazy feature.
           </p>
