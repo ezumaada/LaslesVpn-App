@@ -1,65 +1,78 @@
 import React, { useRef } from 'react';
-import star from '../../assets/images/star.png';  
-import test1 from '../../assets/images/test1.png';
-import test2 from '../../assets/images/test2.png';
-import test3 from '../../assets/images/test3.png';
-import next from '../../assets/images/right.png';
-import back from '../../assets/images/left.png';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import ClientSlider from './ClientSlider';
+import Robert from '../../assets/images/test1.png';
+import Yessica from '../../assets/images/test2.png';
+import Kim from '../../assets/images/test3.png';
+import {
+  ArrowLeftCircleIcon,
+  ArrowRightCircleIcon,
+} from '@heroicons/react/24/outline';
 
-const Testimonials = () => {
-  const scrollRef = useRef(null);
+const data = [
+  {
+    name: "Viezh Robert",
+    location: "Warsaw, Poland",
+    img: Robert,
+    review: "Wow... I am very happy to use this VPN, it turned out to be more than my expectations and so far there have been no problems. LaslesVPN always the best",
+  },
+  {
+    name: 'Yessica Christy',
+    location: 'Shanxi, China',
+    img: Yessica,
+    review: "I like it because I like to travel far and still can connect with high speed."
+  },
+  {
+    name: 'Kim Young Jou',
+    location: 'Seoul, South Korea',
+    img: Kim,
+    review: "This is very unusual for my business that currently requires a virtual private network that has high security.",
+  },
+];
 
-  const scrollNext = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: 380, behavior: 'smooth' }); // Scroll forward
-    }
-  };
-
-  const scrollBack = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: -380, behavior: 'smooth' }); // Scroll backward
-    }
-  };
-
-  const Card = (props) => {
-    return (
-      <div className='flex flex-col px-4 border-gray-400 hover:cursor-pointer hover:border-[#F53838] border-solid border-2 rounded-lg'>
-        <div className='flex flex-row w-[380px] gap-14 '>
-          <img src={props.img} alt="" />
-          <div>
-            <h2 className='font-medium'>{props.title}</h2>
-            <p>{props.location}</p>
-          </div>
-          <div className='flex flex-row gap-2 pl-3 items-center'>
-            <p>4.5</p>
-            <img src={star} className='w-4 h-4' alt="Gold star" />
-          </div>
-        </div>
-        <div>
-          <p>{props.description}</p>
-        </div>
-      </div>
-    );
+function Testimonials() {
+  const arrowRef = useRef(null);
+  const clientData = data.map((d, i) => <ClientSlider item={d} key={i} />);
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
   };
 
   return (
-    <div className='my-10'>
-      <div className='text-center'>
-        <h1 className='font-medium text-4xl'>Trusted by Thousands  of <br /> Happy Customers</h1>
-        <p>These are the stories of our customers who have joined us with great pleasure when using this crazy feature.</p>
-      </div>
-      <div className='flex flex-col mt-5 mx-[10vw] gap-10'>
-        <div ref={scrollRef} className='flex flex-row gap-10 overflow-x-auto scroll-smooth'>
-          <Card img={test1} title="Viezh Robert" location="Warsaw, Poland" description="“Wow... I am very happy to use this VPN, it turned out to be more than my expectations and so far there have been no problems. LaslesVPN always the best”." />
-          <Card img={test1} title="Viezh Robert" location="Warsaw, Poland" description="“Wow... I am very happy to use this VPN, it turned out to be more than my expectations and so far there have been no problems. LaslesVPN always the best”." />
-          <Card img={test2} title="Yessica Christy" location="Shanxi, China" description="“I like it because I like to travel far and still can connect with high speed.”." />
-          <Card img={test2} title="Yessica Christy" location="Shanxi, China" description="“I like it because I like to travel far and still can connect with high speed.”." />
-          <Card img={test3} title="Kim Young Jou" location="Seoul, South Korea" description="“This is very unusual for my business that currently requires a virtual private network that has high security.”."/>
-          <Card img={test1} title="Kim Young Jou" location="Seoul, South Korea" description="“This is very unusual for my business that currently requires a virtual private network that has high security.”."/>
+    <div className='testimonial'>
+      <div className='container'>
+        <div className='testimonial-header'>
+          <h2 className='secondary-header'>
+            Trusted by Thousands of <br /> Happy Customer
+          </h2>
+          <p className='subheading'>
+            These are the stories of our customers who have joined us with great{' '}
+            <br /> pleasure when using this crazy feature.
+          </p>
         </div>
-        <div className='place-items-center flex-row flex'>
-          <img src={back} onClick={scrollBack} className='w-[65px] h-[65px] cursor-pointer' alt="back-button" />
-          <img src={next} onClick={scrollNext} className='w-[65px] h-[65px] cursor-pointer' alt="next-button" />
+        <div className='section-testimonial'>
+          <Slider ref={arrowRef} {...settings}>
+            {clientData}
+          </Slider>
+          <div className='slider-btn'>
+            <div
+              className='control-div'
+              onClick={() => arrowRef.current.slickPrev()}
+            >
+              <ArrowLeftCircleIcon className='control' />
+            </div>
+            <div
+              className='control-div'
+              onClick={() => arrowRef.current.slickNext()}
+            >
+              <ArrowRightCircleIcon className='control' />
+            </div>
+          </div>
         </div>
       </div>
     </div>

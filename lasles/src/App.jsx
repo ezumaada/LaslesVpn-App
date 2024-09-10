@@ -57,8 +57,7 @@ const App = () => {
                 <div ref={sectionsRef[2]}><Pricing /></div>
                 <div ref={sectionsRef[5]}><World /></div>
                 <div ref={sectionsRef[3]}><Testimonials /></div>
-                <div ref={sectionsRef[4]}><Help /></div>
-                <div className='relative'>
+                 <div className='relative'>
                   <Subscription className='absolute bottom-full' />
                   <Footer />
                 </div>

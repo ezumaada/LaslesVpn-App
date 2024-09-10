@@ -2,3 +2,116 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ########### TESTIMONIAL SECTION ############## */
+.display-flex {
+    display: flex;
+  }
+  
+  .slider-container {
+    padding: 0.5rem 3rem 1rem;
+    margin: 0 1rem 5rem;
+    border-radius: 2rem;
+    border: 1px solid #4f5665;
+    height: 19rem;
+  }
+  .testimonial-header,
+  .global-header {
+    text-align: center;
+    word-wrap: break-word;
+  }
+  .testimonial-header {
+    padding-top: 2rem;
+  }
+  .profile {
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+  .profile-details {
+    align-items: center;
+    gap: 1rem;
+  }
+  .profile-name {
+    flex-direction: column;
+    text-align: left;
+  }
+  
+  .testimonial {
+    background-color: #fdfdfd;
+   padding-bottom: 10rem;
+    position: relative;
+    overflow-x: hidden;
+  }
+  
+  .rating {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  .rating > p {
+    font-size: 1.5rem;
+  }
+  .star-icon {
+    color: #fbb03fe0;
+  }
+  main > p {
+    font-size: 1.5rem;
+    color: #4f5665;
+    line-height: 1.5;
+  }
+  .slick-list,
+  .slick-slider,
+  .slick-track {
+    padding: 0;
+  }
+  .slick-dots {
+    text-align: left !important;
+    margin-left: 1rem !important;
+  }
+  .slick-dots li button:before {
+    content: '' !important;
+  }
+  .slick-dots li button {
+    width: 9px !important;
+    height: 9px !important;
+    background-color: #a4a5a8 !important;
+    padding: 0.5rem !important;
+    margin-top: 2rem !important;
+    transition: all 400ms ease-in-out;
+    border-radius: 50%;
+  }
+  .slick-dots li.slick-active button {
+    background: #f53855 !important;
+    width: 2rem !important;
+    border-radius: 50px !important;
+  }
+  .slider-container {
+    transition: all 0.1s ease-in-out;
+  }
+  .slick-current .slider-container {
+    border-color: #f53855 !important;
+    /* background-color: yellow !important; */
+  }
+  .slick-dots li {
+    margin: 0;
+  }
+  .section-testimonial {
+    margin-top: 2rem;
+    position: relative;
+  }
+  .slider-btn {
+    position: absolute;
+    right: 0.7rem;
+    bottom: -4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .control {
+    width: 4rem;
+    color: #f53855;
+    cursor: pointer;
+  }

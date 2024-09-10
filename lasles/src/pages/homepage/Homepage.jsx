@@ -11,7 +11,7 @@ import World from '../../components/world/World'
 
 const Homepage = () => {
   return (
-    <div>
+    <div >
         <Navbar/>
         <About/>
         <Statistics/>

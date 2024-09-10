@@ -11,7 +11,7 @@ const Navbar = ({ scrollToRef }) => {
   };
   return (
     <div>
-      <nav className="px-[7vw] flex flex-row justify-between">
+      <nav className="px-[7vw] pt-5 flex flex-row justify-between">
         <div>
           <Link to='/' onClick={handleLogoClick}>
           <img src={logo} alt="Lasles-logo" /></Link>
